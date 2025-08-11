@@ -1,5 +1,5 @@
 $location = "uksouth"
-$resourceGroupName = "mate-azure-task-10"
+$resourceGroupName = "mate-resources"
 $networkSecurityGroupName = "defaultnsg"
 $virtualNetworkName = "vnet"
 $subnetName = "default"
@@ -19,7 +19,8 @@ New-AzVm `
   -VirtualNetworkName $virtualNetworkName `
   -SecurityGroupName $networkSecurityGroupName `
   -SshKeyName $sshKeyName `
-  -Zone 1
+  -Zone 1 `
+  -PublicIpAddressName ""
 
 New-AzVm `
   -ResourceGroupName $resourceGroupName `
@@ -31,4 +32,5 @@ New-AzVm `
   -VirtualNetworkName $virtualNetworkName `
   -SecurityGroupName $networkSecurityGroupName `
   -SshKeyName $sshKeyName `
-  -Zone 2
+  -Zone 2 `
+  -PublicIpAddressName ""
